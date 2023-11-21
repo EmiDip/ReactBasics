@@ -1,11 +1,19 @@
 const NavBar = ({ button, list }) => {
+  const handleClick = (i) => {
+    const selectedPokemon = list[i].name;
+    button(i);
+
+    if (selectedPokemon === "pikachu") {
+      alert("pika pikachu !!!");
+    }
+  };
   return (
     <div>
       {list.map((pokemon, i) => (
         <button
           key={pokemon.name}
           name={pokemon.name}
-          onClick={() => button(i)}
+          onClick={() => handleClick(i)}
         >
           {pokemon.name}
         </button>
@@ -14,8 +22,3 @@ const NavBar = ({ button, list }) => {
   );
 };
 export default NavBar;
-
-{
-  /* <button onClick={() => button(-1)}>Précédent</button>
-<button onClick={() => button(1)}>Suivant</button> */
-}

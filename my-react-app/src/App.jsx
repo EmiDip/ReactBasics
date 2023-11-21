@@ -1,6 +1,7 @@
 import "./App.css";
-import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import { useEffect } from "react";
+import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
       imgSrc: "https://www.pokepedia.fr/images/7/76/Pikachu-DEPS.png",
     },
     {
+      name: "psyduck",
+      imgSrc: "https://www.pokepedia.fr/images/4/44/Psykokwak-RFVF.png",
+    },
+    {
       name: "mew",
       imgSrc: "https://www.pokepedia.fr/images/1/16/Mew-DEPS.png",
     },
@@ -33,6 +38,10 @@ function App() {
   const handleClick = (i) => {
     setPokemonIndex(i);
   };
+
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
 
   return (
     <div>
