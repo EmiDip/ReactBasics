@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./PokemonCard.css";
 
 const PokemonCard = ({ pokemon }) => {
   return (

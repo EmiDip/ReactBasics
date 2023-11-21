@@ -11,23 +11,32 @@ function App() {
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
     {
+      name: "charmander",
+      imgSrc: "https://www.pokepedia.fr/images/8/89/Salam%C3%A8che-RFVF.png",
+    },
+    {
+      name: "squirtle",
+      imgSrc: "https://www.pokepedia.fr/images/c/cc/Carapuce-RFVF.png",
+    },
+    {
+      name: "pikachu",
+      imgSrc: "https://www.pokepedia.fr/images/7/76/Pikachu-DEPS.png",
+    },
+    {
       name: "mew",
+      imgSrc: "https://www.pokepedia.fr/images/1/16/Mew-DEPS.png",
     },
   ];
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const handleClick = (i) => {
-    const newIndex = pokemonIndex + i;
-
-    if (newIndex >= 0 && newIndex < pokemonList.length) {
-      setPokemonIndex(newIndex);
-    }
+    setPokemonIndex(i);
   };
 
   return (
     <div>
-      <NavBar button={handleClick} />
+      <NavBar list={pokemonList} button={handleClick} />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
   );

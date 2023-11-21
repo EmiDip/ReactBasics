@@ -1,9 +1,21 @@
-const NavBar = ({ button }) => {
+const NavBar = ({ button, list }) => {
   return (
     <div>
-      <button onClick={() => button(-1)}>Précédent</button>
-      <button onClick={() => button(1)}>Suivant</button>
+      {list.map((pokemon, i) => (
+        <button
+          key={pokemon.name}
+          name={pokemon.name}
+          onClick={() => button(i)}
+        >
+          {pokemon.name}
+        </button>
+      ))}
     </div>
   );
 };
 export default NavBar;
+
+{
+  /* <button onClick={() => button(-1)}>Précédent</button>
+<button onClick={() => button(1)}>Suivant</button> */
+}
